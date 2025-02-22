@@ -4,7 +4,7 @@ local creditZone = vector3(-69.19, -802.04, 44.0) -- Örnek koordinat, istediği
 -- Bölge kontrolü
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(0) -- 500ms bekleme, optimize için
+        Citizen.Wait(500) -- 500ms bekleme, optimize için
         local playerPed = PlayerPedId()
         local coords = GetEntityCoords(playerPed)
         local distance = #(coords - creditZone)
@@ -18,7 +18,7 @@ Citizen.CreateThread(function()
             end
             Citizen.Wait(0) -- Yakınken daha sık kontrol
         else
-            Citizen.Wait(0) -- Uzakken daha az kontrol
+            Citizen.Wait(1000) -- Uzakken daha az kontrol
         end
     end
 end)

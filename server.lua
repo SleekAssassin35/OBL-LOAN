@@ -1,8 +1,8 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
--- Discord Webhook URL'leri (server.cfg veya burada tanımla)
-local webhookApproved = "https://discord.com/api/webhooks/1183883597741043772/x56rdcPg1JZQxh8kUndb3V503_Tx7ZRq9i3ObxfJhllUXtyWPig4XH_gTnsYQ3wqSG5K" -- Onaylanan krediler
-local webhookCancelled = "https://discord.com/api/webhooks/1134572630595354694/VhLzqDNHoP68B997roLBx3GNUnpaEz-MqgBTPdNSEZMiWqpi-SgLQFjlTNM6Q9egnTkn" -- İptal edilen krediler
+-- Discord Webhook URL'leri
+local webhookApproved = "YOUR_APPROVED_WEBHOOK_URL"
+local webhookCancelled = "YOUR_CANCELLED_WEBHOOK_URL"
 
 -- Webhook gönderme fonksiyonu
 local function sendToDiscord(webhook, title, description, color)
