@@ -1,0 +1,175 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.85);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container {
+    background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+    padding: 25px;
+    border-radius: 25px;
+    width: 450px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid #00bcd4;
+}
+
+h2 {
+    text-align: center;
+    color: #00bcd4;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 i {
+    margin-right: 10px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 14px;
+    color: #d0d0d0;
+    font-family: 'Roboto', sans-serif;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #333355;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input[readonly] {
+    background: #444466;
+    cursor: not-allowed;
+}
+
+input:focus, select:focus {
+    outline: none;
+    background: #444466;
+    box-shadow: 0 0 8px #00bcd4;
+}
+
+p {
+    color: #00bcd4;
+    font-size: 12px;
+    margin: 10px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+p i {
+    margin-right: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    background: #00bcd4;
+    color: #000000;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 48%;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+button:hover {
+    background: #0097a7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+}
+
+button:nth-child(2) {
+    background: #ff4444;
+    color: #ffffff;
+}
+
+button:nth-child(2):hover {
+    background: #cc3333;
+    box-shadow: 0 4px 12px rgba(255, 68, 68, 0.4);
+}
+
+button i {
+    margin-right: 5px;
+}
+
+.summary-content {
+    background: #2d2d44;
+    padding: 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #d0d0d0;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.summary-content strong {
+    color: #00bcd4;
+}
+
+.extra-option {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.extra-option button {
+    background: #00bcd4;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.extra-option button:hover {
+    background: #0097a7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+}
+
+#vehicles {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #333355;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+    height: 150px;
+}
+
+/* Google Fonts için ekleme (Roboto fontu için) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body, label, button, p, .summary-content {
+    font-family: 'Roboto', sans-serif;
+}

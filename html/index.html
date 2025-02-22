@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kredi Başvuru Paneli</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="container" style="display: none;">
+        <!-- Adım 1: Bilgi Girişi -->
+        <div id="step1">
+            <h2><i class="fas fa-file-alt"></i> Kredi Başvuru Formu</h2>
+            <label>Meslek:</label><input type="text" id="job" placeholder="Mesleğinizi girin"><br>
+            <label>Meslek Rütbesi:</label><input type="text" id="jobRank" placeholder="Yoksa 'Yok' yazın"><br>
+            <label>Üzerinize Araç Var mı?</label>
+            <select id="hasVehicle">
+                <option value="Hayır">Hayır</option>
+                <option value="Evet">Evet</option>
+            </select><br>
+            <label>Üzerinize Ev Var mı?</label>
+            <select id="hasHouse">
+                <option value="Hayır">Hayır</option>
+                <option value="Evet">Evet</option>
+            </select><br>
+            <label>Aylık Tahmini Gelir:</label><input type="text" id="income" placeholder="Örn: 5000"><br>
+            <label>Parayı Ne İçin Kullanacaksınız?</label><input type="text" id="purpose" placeholder="Amaç girin"><br>
+            <label>Üzerinize Kayıtlı İş Yeri Var mı?</label>
+            <select id="hasBusiness">
+                <option value="Hayır">Hayır</option>
+                <option value="Evet">Evet</option>
+            </select><br>
+            <label>Kefil İsim-Soyisim:</label><input type="text" id="guarantorName" placeholder="Kefilin adı soyadı"><br>
+            <label>Kefil Telefon Numarası:</label><input type="text" id="guarantorPhone" placeholder="Örn: 0555 123 4567"><br>
+            <label>Kredi Türü:</label>
+            <select id="creditType">
+                <option value="İhtiyaç Kredisi">İhtiyaç Kredisi</option>
+                <option value="Taşıt Kredisi">Taşıt Kredisi</option>
+                <option value="Ev Kredisi">Ev Kredisi</option>
+            </select><br>
+            <div class="button-container">
+                <button onclick="nextStep()"><i class="fas fa-arrow-right"></i> Devam</button>
+                <button onclick="closeUI()"><i class="fas fa-times"></i> Kapat</button>
+            </div>
+        </div>
+
+        <!-- Adım 2: Miktar ve Vade -->
+        <div id="step2" style="display: none;">
+            <h2><i class="fas fa-coins"></i> Kredi Detayları</h2>
+            <label>Mevcut Banka Bakiyeniz:</label><input type="text" id="bankBalance" readonly><br>
+            <label>İstediğiniz Miktar (Maks. %50 Bakiye):</label><input type="number" id="amount" min="1" placeholder="Miktar girin"><br>
+            <label>Vade (1-30 gün):</label><input type="number" id="term" min="1" max="30" placeholder="Gün sayısı"><br>
+            <p><i class="fas fa-info-circle"></i> Günlük %1 faiz uygulanır.</p>
+            <div class="button-container">
+                <button onclick="submitStep2()"><i class="fas fa-arrow-right"></i> Devam</button>
+                <button onclick="closeUI()"><i class="fas fa-times"></i> Kapat</button>
+            </div>
+            <div class="extra-option">
+                <button onclick="showVehicleMortgage()">Daha Fazla Kredi İster misiniz?</button>
+            </div>
+        </div>
+
+        <!-- Araç İpotek Alanı -->
+        <div id="vehicleMortgage" style="display: none;">
+            <h2><i class="fas fa-car"></i> Araç İpotek</h2>
+            <label>Araçlarınız:</label><br>
+            <select id="vehicles" multiple size="5">
+                <!-- Araçlar burada dinamik olarak doldurulacak -->
+            </select><br>
+            <p><i class="fas fa-info-circle"></i> Araç değerleriniz hesaplanıp sizinle iletişime geçilecektir.</p>
+            <div class="button-container">
+                <button onclick="submitVehicleMortgage()"><i class="fas fa-arrow-right"></i> Devam</button>
+                <button onclick="closeUI()"><i class="fas fa-times"></i> Kapat</button>
+            </div>
+        </div>
+
+        <!-- Özet -->
+        <div id="summary" style="display: none;">
+            <h2><i class="fas fa-check-circle"></i> Başvuru Özeti</h2>
+            <div id="summaryText" class="summary-content"></div>
+            <div class="button-container">
+                <button onclick="approve()"><i class="fas fa-check"></i> Onayla</button>
+                <button onclick="cancel()"><i class="fas fa-ban"></i> İptal</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
